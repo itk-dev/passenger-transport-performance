@@ -143,7 +143,8 @@ decided. Everything else can continue while it is open.
 - **Depends on:** M1-01
 - **Work:**
   - PHPUnit with `tests/Unit`, `tests/Integration` and `tests/Functional`.
-  - pcov in the phpfpm image, and a MariaDB test database with `dama/doctrine-test-bundle`.
+  - Coverage with Xdebug from the phpfpm image (the image has no pcov), and a MariaDB test
+    database with `dama/doctrine-test-bundle`.
   - `zenstruck/foundry` and `doctrine/doctrine-fixtures-bundle`.
   - `rregeer/phpunit-coverage-check` at 100 %. The only exclusions are `src/Kernel.php` and
     `migrations/`.
@@ -162,9 +163,8 @@ decided. Everything else can continue while it is open.
   - `task test:coverage:check` passes at 100 % and fails if a line is uncovered. Prove it once
     with a throwaway uncovered method.
   - The PR workflow runs on pull requests to `develop` and `main`.
-  - The `composer audit` step fails on a dependency with a known vulnerability. Prove it once
-    in a scratch branch.
-  - Dependabot shows the configuration as valid on GitHub.
+  - The proofs that `composer audit` fails on a known vulnerability and that GitHub accepts the
+    Dependabot configuration are moved to "Later milestones" in the [plan](plan.md).
 
 ### M1-03 Mutation testing
 
